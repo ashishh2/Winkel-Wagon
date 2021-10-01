@@ -16,6 +16,6 @@ app.get('/api/products/:id', (req, res) => {
     res.json(product);
 });
 
-app.listen(3000, () => {
+app.listen(3005, () => {
     console.log('Listening on port 3000...');
 });
