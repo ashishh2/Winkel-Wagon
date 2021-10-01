@@ -15,7 +15,8 @@
     "license": "ISC",
     "dependencies": {
         "dotenv": "^10.0.0",
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "mongoose": "^6.0.8"
     },
     "devDependencies": {
         "concurrently": "^6.2.2",
