@@ -1,0 +1,15 @@
+{
+    "name": "winkel-wagon",
+    "version": "1.0.0",
+    "description": "MERN Shopping Cart",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon backend/server"
+    },
+    "keywords": [],
+    "author": "Ashish",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
