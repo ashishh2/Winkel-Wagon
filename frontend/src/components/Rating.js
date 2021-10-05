@@ -7,9 +7,7 @@ const Rating = ({ value, text, color }) => {
         if (value >= i) {
             stars.push(<i style={{ color }} className='fas fa-star' />);
         } else if (value >= i - 0.5) {
-            stars.push(
-                <i style={{ color }} className='fas fa-star-half-alt' />
-            );
+            stars.push(<i style={{ color }} className='fas fa-star-half-alt' />);
         } else {
             stars.push(<i style={{ color }} className='far fa-star' />);
         }

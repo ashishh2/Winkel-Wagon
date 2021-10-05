@@ -10,7 +10,9 @@ const Header = () => {
                     <LinkContainer to='/'>
                         <Navbar.Brand>WINKEL WAGON</Navbar.Brand>
                     </LinkContainer>
-                    <Navbar.Toggle aria-controls='basic-navbar-nav' />
+                    <Navbar.Toggle aria-controls='basic-navbar-nav' className='text-primary'>
+                        MENU
+                    </Navbar.Toggle>
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='ms-auto'>
                             <LinkContainer to='/cart'>
