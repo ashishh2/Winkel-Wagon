@@ -43,7 +43,7 @@ const ProfileScreen = ({ history }) => {
 
     return (
         <Row>
-            <Col md={3}>
+            <Col>
                 <h2>Your Profile</h2>
                 {error && <Message variant='warning'>{error}</Message>}
                 {success && (
@@ -83,9 +83,6 @@ const ProfileScreen = ({ history }) => {
                         UPDATE
                     </Button>
                 </Form>
-            </Col>
-            <Col md={9}>
-                <h2 className='text-center'>Your Orders</h2>
             </Col>
         </Row>
     );
