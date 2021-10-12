@@ -21,7 +21,10 @@ const Header = () => {
                     <LinkContainer to='/'>
                         <Navbar.Brand>WINKEL WAGON</Navbar.Brand>
                     </LinkContainer>
-                    <Navbar.Toggle aria-controls='basic-navbar-nav' className='text-primary'>
+                    <Navbar.Toggle
+                        aria-controls='basic-navbar-nav'
+                        className='text-primary'
+                    >
                         MENU
                     </Navbar.Toggle>
                     <Navbar.Collapse id='basic-navbar-nav'>
@@ -32,9 +35,14 @@ const Header = () => {
                                 </Nav.Link>
                             </LinkContainer>
                             {userInfo ? (
-                                <NavDropdown title={userInfo.name} id='username'>
+                                <NavDropdown
+                                    title={userInfo.name}
+                                    id='username'
+                                >
                                     <LinkContainer to='/profile'>
-                                        <NavDropdown.Item>PROFILE</NavDropdown.Item>
+                                        <NavDropdown.Item>
+                                            PROFILE
+                                        </NavDropdown.Item>
                                     </LinkContainer>
                                     <NavDropdown.Item onClick={logoutHandler}>
                                         LOGOUT
@@ -46,6 +54,25 @@ const Header = () => {
                                         <i className='fas fa-user' /> SIGN IN
                                     </Nav.Link>
                                 </LinkContainer>
+                            )}
+                            {userInfo && userInfo.isAdmin && (
+                                <NavDropdown title='Admin' id='adminmenu'>
+                                    <LinkContainer to='/admin/userlist'>
+                                        <NavDropdown.Item>
+                                            USERS
+                                        </NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/admin/productlist'>
+                                        <NavDropdown.Item>
+                                            PRODUCTS
+                                        </NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/admin/orderlist'>
+                                        <NavDropdown.Item>
+                                            ORDERS
+                                        </NavDropdown.Item>
+                                    </LinkContainer>
+                                </NavDropdown>
                             )}
                         </Nav>
                     </Navbar.Collapse>
