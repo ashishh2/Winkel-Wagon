@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -66,10 +67,7 @@ const UserListScreen = ({ history, match }) => {
     return (
         <>
             <Row className='align-items-center'>
-                <Col>
-                    <h2>Products</h2>
-                </Col>
-                <Col className='text-right'>
+                <Col className='text-center'>
                     <Button className='my-3' onClick={createProductHandler}>
                         <i className='fas fa-plus' /> Create Product
                     </Button>
@@ -102,7 +100,17 @@ const UserListScreen = ({ history, match }) => {
                                 <td>₹{product.price}</td>
                                 <td>{product.category}</td>
                                 <td>{product.brand}</td>
-                                <td>
+                                <td className='text-center'>
+                                    <LinkContainer
+                                        to={`/admin/products/${product._id}/edit`}
+                                    >
+                                        <Button
+                                            variant='light'
+                                            className='btn-sm mx-2'
+                                        >
+                                            <i className='fas fa-edit'></i>
+                                        </Button>
+                                    </LinkContainer>
                                     <Button
                                         variant='danger'
                                         className='btn-sm'
