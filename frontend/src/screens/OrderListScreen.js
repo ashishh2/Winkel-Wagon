@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Table, Button } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listOrders } from '../actions/orderActions';
@@ -57,6 +58,16 @@ const OrderListScreen = ({ history }) => {
                                     {order.isDelivered
                                         ? order.deliveredAt.substring(0, 10)
                                         : 'No'}
+                                </td>
+                                <td>
+                                    <LinkContainer to={`/orders/${order._id}`}>
+                                        <Button
+                                            variant='light'
+                                            className='btn-sm'
+                                        >
+                                            Details
+                                        </Button>
+                                    </LinkContainer>
                                 </td>
                             </tr>
                         ))}
